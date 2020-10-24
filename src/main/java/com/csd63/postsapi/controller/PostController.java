@@ -5,6 +5,9 @@ import com.csd63.postsapi.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@CrossOrigin(origins = "localhost:8080", maxAge = 3600)
 @RestController
 @RequestMapping("/posts")
 public class PostController {
@@ -13,7 +16,7 @@ public class PostController {
     private PostService postService;
 
     @GetMapping
-    public Iterable<Post> getAllPosts(){
+    public List<Post> getAllPosts(){
         return postService.getAll();
     }
 

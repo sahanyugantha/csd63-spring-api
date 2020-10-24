@@ -3,8 +3,10 @@ package com.csd63.postsapi.service;
 import com.csd63.postsapi.dao.PostRepository;
 import com.csd63.postsapi.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -13,8 +15,8 @@ public class PostService {
     @Autowired
     private PostRepository postRepository;
 
-    public Iterable<Post> getAll(){
-        return postRepository.findAll();
+    public List<Post> getAll(){
+        return postRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
     }
 
     public Post getById(int id){
