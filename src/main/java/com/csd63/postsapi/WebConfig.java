@@ -1,11 +1,14 @@
 package com.csd63.postsapi;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry
@@ -13,6 +16,11 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedOrigins("http://localhost:3000","http://localhost:8080")// wildcard for all origins -> "*"
                 .allowedMethods("*"); //"HEAD", "GET", "PUT", "POST", "DELETE", "PATCH"
     }
+
+//    @Bean
+//    public Docket docket(){
+//        return new Docket(DocumentationType.SWAGGER_2).select().build();
+//    }
 
     // registry.addMapping("/**").allowedOrigins("*").allowedMethods("GET", "POST","PUT", "DELETE");
 }
