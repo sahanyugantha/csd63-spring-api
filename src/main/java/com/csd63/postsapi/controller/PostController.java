@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "localhost:8080", maxAge = 3600)
+@CrossOrigin(origins = "localhost:8082", maxAge = 3600)
 @RestController
 @RequestMapping("/posts")
 public class PostController {
